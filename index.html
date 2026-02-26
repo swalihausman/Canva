@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Ruwaiskkkkaaaaa ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Minimal Background Hearts -->
+<div class="bg-hearts">
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+</div>
+
+<!-- Single Smooth Heart -->
+<div class="heart-container" onclick="burstHeart()">
+    <svg class="heart" viewBox="0 0 512 512">
+        <path d="M256 460
+         C 200 410, 120 350, 75 290
+         C 30 230, 40 150, 110 110
+         C 170 75, 230 105, 256 155
+         C 282 105, 342 75, 402 110
+         C 472 150, 482 230, 437 290
+         C 392 350, 312 410, 256 460 Z"/>
+    </svg>
+</div>
+
+<div class="title">
+Tap My Heart ♡
+</div>
+
+<script>
+function burstHeart(){
+    const heart=document.querySelector(".heart");
+
+    heart.style.animation="none";
+
+    for(let i=0;i<30;i++){
+        const small=document.createElement("div");
+        small.classList.add("small-heart");
+        small.innerHTML="❤";
+        small.style.left="50%";
+        small.style.top="50%";
+
+        const x=(Math.random()-0.5)*700+"px";
+        const y=(Math.random()-0.5)*700+"px";
+
+        small.style.setProperty('--x',x);
+        small.style.setProperty('--y',y);
+
+        document.body.appendChild(small);
+        setTimeout(()=>small.remove(),1000);
+    }
+
+    heart.style.transform="scale(0)";
+
+    setTimeout(()=>{
+        window.location.href="page2.html";
+    },1200);
+}
+</script>
+
+</body>
+</html>
